@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@kommint/typescript-config", "@kommint/eslint-config"]
+  "ignore": []
 }
