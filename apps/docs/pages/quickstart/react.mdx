@@ -1,7 +1,62 @@
-## Next.js
+## Next.js(React)
+
+If you want to use the Kommint in your React app, you should install the Kommint React package to your application.
 
 ### Installation
 
+```bash filename="Terminal"
+yarn add @kommint/react
+```
+
+or (your preferred package manager)
+
 ### Usage
+
+### 1. Global
+
+Important things to note:
+
+- `appId`: is the unique identifier of your application. You can get it from the [Kommint Dashboard](https://kommint.com).
+- `uid`: is the unique identifier of the page or the content. Think of it as a slug or a unique ID. You should provide it.
+
+```ts filename="app/layout.tsx"
+import { KommintProvider } from "@kommint/react";
+
+function Providers({ children }) {
+  return <KommintProvider appId={`YOUR_APP_ID`}>{children}</KommintProvider>;
+}
+```
+
+And in the page where you want to use Kommint, import the `Comments` component and pass the `uid` and `appId` props.
+
+```ts filename="app/page.tsx"
+import { Kommint } from "@kommint/react";
+
+export default function Home() {
+  return (
+    <div>
+      <Kommint
+        uid={`UNIQUE_ID`}
+      />
+    </div>
+  );
+}
+```
+
+### 2. Local
+
+You can also import the `Kommint` component where you want to use Kommint.
+
+```js
+import { Kommint } from "@kommint/react";
+
+export default function Home() {
+  return (
+    <div>
+      <Kommint uid={`UNIQUE_ID`} appId={`YOUR_APP_ID`} />
+    </div>
+  );
+}
+```
 
 ### Configuration

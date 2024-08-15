@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsup . --watch",
+    "dev": "npm run build -- --watch",
     "build": "tsup",
     "typecheck": "tsc --noEmit"
   },
