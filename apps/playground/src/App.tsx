@@ -3,15 +3,15 @@ import { KommintProvider, Comments } from "@kommint/react";
 
 function Body() {
   return (
-    <div>
-      <Comments />
+    <div style={{ width: "400px" }}>
+      <Comments uid="example-page" />
     </div>
   );
 }
 
 function App() {
   return (
-    <KommintProvider appId="test">
+    <KommintProvider appId="2b9b184b-bd58-40c9-82d4-7a5393031cfe">
       <Body />
     </KommintProvider>
   );

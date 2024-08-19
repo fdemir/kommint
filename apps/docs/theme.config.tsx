@@ -1,19 +1,18 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from "react";
+import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
   logo: <span>Kommint</span>,
   project: {
-    // link: 'https://github.com/shuding/nextra-docs-template',
+    link: "https://github.com/fdemir/kommint",
   },
   chat: {
-    link: 'https://kommint.com',
+    link: "https://kommint.com",
   },
   docsRepositoryBase: "https://github.com/kommint",
   footer: {
-    text: 'Kommint',
-
+    text: "Kommint",
   },
-}
+};
 
-export default config
+export default config;

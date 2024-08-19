@@ -30,12 +30,12 @@ function Providers({ children }) {
 And in the page where you want to use Kommint, import the `Comments` component and pass the `uid` as props.
 
 ```ts filename="app/page.tsx"
-import { Kommint } from "@kommint/react";
+import { Comments } from "@kommint/react";
 
 export default function Home() {
   return (
     <div>
-      <Kommint
+      <Comments
         uid={`UNIQUE_ID`}
       />
     </div>
@@ -48,12 +48,12 @@ export default function Home() {
 You can also import the `Kommint` component where you want to use Kommint.
 
 ```js
-import { Kommint } from "@kommint/react";
+import { Comments } from "@kommint/react";
 
 export default function Home() {
   return (
     <div>
-      <Kommint uid={`UNIQUE_ID`} appId={`YOUR_APP_ID`} />
+      <Comments uid={`UNIQUE_ID`} appId={`YOUR_APP_ID`} />
     </div>
   );
 }
