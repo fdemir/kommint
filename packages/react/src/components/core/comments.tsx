@@ -24,7 +24,7 @@ export const Comments = (props: CommentsProps) => {
 
   return (
     <div className="k-flex k-flex-col k-gap-4">
-      <Form onSubmit={handleSubmit} appId={appId} uid={props.uid} />
+      <Form onSubmit={handleSubmit} appId={targetAppid} uid={props.uid} />
       <div className="k-flex k-flex-col k-gap-2">
         {data?.map((item, index) => <Item key={index} data={item} />)}
       </div>
