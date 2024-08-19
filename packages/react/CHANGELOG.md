@@ -1,5 +1,11 @@
 # @kommint/react
 
+## 0.0.6
+
+### Patch Changes
+
+- bc73b44: fix wrong payload
+
 ## 0.0.5
 
 ### Patch Changes
