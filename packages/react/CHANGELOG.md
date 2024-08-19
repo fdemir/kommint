@@ -1,5 +1,11 @@
 # @kommint/react
 
+## 0.0.5
+
+### Patch Changes
+
+- 22881e2: fix form submit issue
+
 ## 0.0.4
 
 ### Patch Changes
