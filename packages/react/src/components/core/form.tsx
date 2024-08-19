@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
 interface FormProps {
-  onSubmit: (data: CommentItem) => void;
+  onSubmit: (data: Omit<CommentItem, "id">) => void;
 
   appId: string;
   uid: string;
@@ -22,7 +22,6 @@ export const Form = (props: FormProps) => {
     props.onSubmit({
       text: formValues.get("text") as string,
       date: new Date(),
-      id: crypto.randomUUID(),
     });
 
     event.currentTarget.reset();
@@ -35,7 +34,7 @@ export const Form = (props: FormProps) => {
   };
 
   return (
-    <form className="k-flex" onSubmit={handleSubmit}>
+    <form className="k-flex k-gap-2" onSubmit={handleSubmit}>
       <Input
         type="text"
         placeholder="Write a comment"

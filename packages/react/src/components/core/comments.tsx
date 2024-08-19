@@ -15,8 +15,14 @@ export const Comments = (props: CommentsProps) => {
 
   const { data, error, updateData } = useComments(targetAppid, props.uid);
 
-  const handleSubmit = async (newComment: CommentItem) =>
-    updateData([newComment, ...(data || [])]);
+  const handleSubmit = async (newComment: Omit<CommentItem, "id">) =>
+    updateData([
+      {
+        ...newComment,
+        id: crypto.randomUUID(),
+      },
+      ...(data || []),
+    ]);
 
   if (error) {
     return <div>Error</div>;
