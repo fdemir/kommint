@@ -4,7 +4,7 @@ import { KommintProvider, Comments } from "@kommint/react";
 function Body() {
   return (
     <div style={{ width: "400px" }}>
-      <Comments uid="example-page" />
+      <Comments uid="example" />
     </div>
   );
 }

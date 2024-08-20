@@ -1,3 +1,3 @@
 export const config = {
-  baseURL: "https://api.kommint.com",
+  baseURL: "http://localhost:3002",
 };

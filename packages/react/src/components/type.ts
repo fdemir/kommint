@@ -4,7 +4,13 @@ export interface CommentItem {
   date: Date;
 }
 
-export type CommentResponse = CommentItem[];
+export type CommentResponse = {
+  page: number;
+  limit: number;
+  total_rows: number;
+  total_pages: number;
+  rows: CommentItem[];
+};
 
 export type CreateCommentRequestPayload = {
   text: string;
