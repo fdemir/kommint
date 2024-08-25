@@ -3,7 +3,7 @@ import { KommintProvider, Comments } from "@kommint/react";
 
 function Body() {
   return (
-    <div style={{ width: "400px" }}>
+    <div style={{ width: "400px", padding: "20px" }}>
       <Comments uid="example" />
     </div>
   );

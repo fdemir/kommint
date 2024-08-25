@@ -3,7 +3,7 @@ import { useMutation } from "../hooks/useFetch";
 import { useCreateComment } from "../services/comment";
 import { CommentItem, CreateCommentRequestPayload } from "../type";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 interface FormProps {
   onSubmit: (data: Omit<CommentItem, "id">) => void;
@@ -34,15 +34,17 @@ export const Form = (props: FormProps) => {
   };
 
   return (
-    <form className="k-flex k-gap-2" onSubmit={handleSubmit}>
-      <Input
+    <form className="k-flex k-flex-col k-gap-2" onSubmit={handleSubmit}>
+      <Textarea
         type="text"
         placeholder="Write a comment"
         name="text"
         required
         autoComplete="off"
       />
-      <Button>Send</Button>
+      <div className="k-border-t k-border-0 k-border-solid k-border-t-zinc-100 k-pt-2 k-flex k-justify-end">
+        <Button>Send</Button>
+      </div>
     </form>
   );
 };

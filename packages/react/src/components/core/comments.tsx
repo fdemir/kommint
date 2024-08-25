@@ -5,6 +5,7 @@ import { useKommint } from "src/providers/kommint";
 import { useComments } from "../services/comment";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { cn } from "src/utils/style";
 
 interface CommentsProps {
   uid: string;
@@ -48,10 +49,15 @@ export const Comments = (props: CommentsProps) => {
       {data.length > 0 && (
         <div className="k-flex k-justify-center">
           <button
-            className="k-w-full k-text-center k-block k-py-2 k-cursor-pointer k-border-0 k-bg-transparent"
+            className={cn(
+              "k-w-full k-text-center k-block k-py-2 k-cursor-pointer k-border-0 k-bg-transparent",
+              {
+                "k-pointer-events-none k-opacity-50":
+                  data[0]?.total_pages === currentPage,
+              }
+            )}
             role="button"
             onClick={handleLoadMoreComments}
-            disabled={data[0]?.total_pages === currentPage}
           >
             Load more comments
           </button>

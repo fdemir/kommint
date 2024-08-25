@@ -6,8 +6,8 @@ export interface InputProps
 
 export const Button = (props: ButtonProps) => {
   return (
-    <button className="k-inline-flex k-items-center k-gap-2 k-rounded k-border k-border-emerald-600 k-bg-emerald-600 k-px-8 k-text-white hover:k-bg-emerald-700 focus:k-outline-none focus:k-ring active:k-text-emerald-600 active:k-bg-transparent active:k-ring-offset-2 disabled:k-cursor-not-allowed disabled:k-opacity-50">
-      <span className="k-text-sm k-font-medium"> {props.children} </span>
+    <button className="k-inline-flex k-items-center k-justify-center k-whitespace-nowrap k-rounded-md k-text-sm k-font-medium k-ring-offset-emerald-600 k-transition-colors focus-visible:k-outline-none focus-visible:ring-2 focus-visible:k-ring-emerald-600 focus-visible:k-ring-offset-2 k-bg-emerald-600 k-text-white k-h-8 k-px-4 k-py-2 hover:k-bg-emerald-600/90 k-cursor-pointer k-border-0 disabled:k-pointer-events-none disabled:k-opacity-50">
+      {props.children}
     </button>
   );
 };
