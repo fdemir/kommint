@@ -1,5 +1,15 @@
 # @kommint/react
 
+## 0.1.0
+
+### Minor Changes
+
+- 83e411e: contains the following things:
+
+  - pagination(load more)
+  - consistent styling accross the elements
+  - using textarea instead of input, supports multiline
+
 ## 0.0.7
 
 ### Patch Changes

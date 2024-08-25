@@ -1,6 +1,6 @@
 {
   "name": "@kommint/react",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Easiest way to add comments.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
