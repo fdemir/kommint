@@ -4,6 +4,9 @@ import { globalExternals } from "@fal-works/esbuild-plugin-global-externals";
 import path from "path";
 import { StringDecoder } from "node:string_decoder";
 import crypto from "crypto";
+import stylePlugin from "esbuild-style-plugin";
+import { readFileSync, writeFileSync } from "node:fs";
+import { tailwindPlugin } from "esbuild-plugin-tailwindcss";
 
 export const bundle = async (code: string) => {
   const cwd = process.cwd() + "/src";
@@ -110,29 +113,34 @@ export const bundle = async (code: string) => {
           type: "cjs",
         },
       }),
+      inMemoryPlugin,
       NodeResolvePlugin({
         extensions: [".js", ".ts", ".jsx", ".tsx"],
         resolveOptions: { basedir: cwd },
       }),
-      inMemoryPlugin,
+      tailwindPlugin({}),
     ],
-    entryPoints: [entryPath],
+    entryPoints: [entryPath, path.join(cwd, `./app/globals.css`)],
     bundle: true,
     format: "iife",
     globalName: "Component",
     minify: true,
-    write: false,
-    outdir: undefined,
     publicPath: undefined,
     absWorkingDir: cwd,
+    write: false,
+    outdir: process.cwd() + "/dist",
   });
 
+  const outCode = decodeFileContent(result.outputFiles[0].contents);
+  const outCss = decodeFileContent(result.outputFiles[1].contents);
+
+  return {
+    code: `${outCode};return Component;`,
+    css: outCss,
+  };
+};
+
+const decodeFileContent = (content: any) => {
   const decoder = new StringDecoder("utf8");
-  let x = "";
-
-  if (result.outputFiles) {
-    x = decoder.write(Buffer.from(result.outputFiles[0].contents));
-  }
-
-  return `${x};return Component;`;
+  return decoder.write(Buffer.from(content));
 };

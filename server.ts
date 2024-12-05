@@ -29,10 +29,12 @@ app.prepare().then(() => {
 
       try {
         const x = await bundle(code);
-        return res.end(x);
-      } catch {
+
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify(x));
+      } catch (e) {
         res.statusCode = 500;
-        return res.end("Internal server error");
+        return res.end("Internal server error " + e);
       }
     }
 

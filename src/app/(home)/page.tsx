@@ -46,7 +46,7 @@ export default function Home() {
           <div className="mb-4">
             <h2 className="text-xl font-bold mb-2">kommint creates things</h2>
             <p className="text-zinc-400">
-              Zart zort zort zort zort zort zort zort zort zort zort zort
+              It builds with your components and design system.
             </p>
           </div>
           <Textarea
